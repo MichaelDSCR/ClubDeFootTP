@@ -19,7 +19,7 @@ Ce projet est une application Java simple qui permet de gérer des clubs de foot
 ## Installation
 - Clonez le dépôt : git clone https://github.com/MichaelDSCR/ClubDEFootTP.git
 - Accédez au répertoire du projet : cd votre-projet
-- Executez l'application : mvn exec:java -Dexec.mainClass="com.formation.poe.java.dictionnaire.Main"
+- Executez l'application : mvn exec:java -Dexec.mainClass="com.formation.poe.java.clubdefoot.Main"
 - Suivez les instructions dans le menu pour utiliser les différentes fonctionnalités.
 
 ## Journalisation
