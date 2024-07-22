@@ -17,12 +17,14 @@ Ce projet est une application Java simple qui permet de gérer des clubs de foot
 - Maven 3.6 ou supérieur
 
 ## Installation
-Clonez le dépôt : git clone https://github.com/MichaelDSCR/ClubDEFootTP.git
-Accédez au répertoire du projet : cd votre-projet
-Executez l'application : mvn exec:java -Dexec.mainClass="com.formation.poe.java.dictionnaire.Main"
-Suivez les instructions dans le menu pour utiliser les différentes fonctionnalités.
-Journalisation
-Les logs sont configurés avec Logback et SLF4J. La configuration de base affiche les logs dans la console. Vous pouvez modifier logback.xml pour changer la configuration des logs.
+- Clonez le dépôt : git clone https://github.com/MichaelDSCR/ClubDEFootTP.git
+- Accédez au répertoire du projet : cd votre-projet
+- Executez l'application : mvn exec:java -Dexec.mainClass="com.formation.poe.java.dictionnaire.Main"
+- Suivez les instructions dans le menu pour utiliser les différentes fonctionnalités.
+
+## Journalisation
+- Les logs sont configurés avec Logback et SLF4J. La configuration de base affiche les logs dans la console.
+- Vous pouvez modifier logback.xml pour changer la configuration des logs.
 
 ## Tests
 Pour exécuter les tests unitaires, utilisez la commande suivante : mvn test
