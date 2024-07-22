@@ -1,11 +1,15 @@
 package com.formation.poe.java.clubdefoot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         List<ClubDeFoot> clubs = new ArrayList<>();
 
@@ -31,13 +35,13 @@ public class Main {
         clubs.add(club2);
         clubs.add(club3);
 
-        System.out.println("Clubs triés par nom:");
+        logger.info("Clubs triés par nom:");
         clubs.sort(Comparator.comparing(ClubDeFoot::getNom));
         for (ClubDeFoot club : clubs) {
-            System.out.println(club);
+            logger.info(club.toString());
         }
 
-        System.out.println("\nClubs triés par classement:");
+        logger.info("\nClubs triés par classement:");
         clubs.sort((c1, c2) -> {
             int scoreComparison = Integer.compare(c2.getScore(), c1.getScore());
             if (scoreComparison == 0) {
@@ -46,7 +50,7 @@ public class Main {
             return scoreComparison;
         });
         for (ClubDeFoot club : clubs) {
-            System.out.println(club);
+            logger.info(club.toString());
         }
     }
 }

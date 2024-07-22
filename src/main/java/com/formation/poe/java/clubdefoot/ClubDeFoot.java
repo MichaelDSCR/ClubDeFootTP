@@ -1,6 +1,11 @@
 package com.formation.poe.java.clubdefoot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ClubDeFoot {
+    private static final Logger logger = LoggerFactory.getLogger(ClubDeFoot.class);
+
     private String nom;
     private int matchsRemportes;
     private int matchsNuls;
@@ -13,6 +18,7 @@ public class ClubDeFoot {
         this.matchsNuls = 0;
         this.matchsPerdus = 0;
         this.butsMarques = 0;
+        logger.debug("Création du club : {}", nom);
     }
 
     public String getNom() {
@@ -25,9 +31,11 @@ public class ClubDeFoot {
 
     public void setMatchsRemportes(int matchsRemportes) {
         if (matchsRemportes < 0) {
+            logger.error("Tentative de définir un nombre négatif de matchs remportés");
             throw new IllegalArgumentException("Le nombre de matchs remportés ne peut pas être négatif");
         }
         this.matchsRemportes = matchsRemportes;
+        logger.info("Matchs remportés mis à jour à : {}", matchsRemportes);
     }
 
     public int getMatchsNuls() {
@@ -36,9 +44,11 @@ public class ClubDeFoot {
 
     public void setMatchsNuls(int matchsNuls) {
         if (matchsNuls < 0) {
+            logger.error("Tentative de définir un nombre négatif de matchs nuls");
             throw new IllegalArgumentException("Le nombre de matchs nuls ne peut pas être négatif");
         }
         this.matchsNuls = matchsNuls;
+        logger.info("Matchs nuls mis à jour à : {}", matchsNuls);
     }
 
     public int getMatchsPerdus() {
@@ -47,9 +57,11 @@ public class ClubDeFoot {
 
     public void setMatchsPerdus(int matchsPerdus) {
         if (matchsPerdus < 0) {
+            logger.error("Tentative de définir un nombre négatif de matchs perdus");
             throw new IllegalArgumentException("Le nombre de matchs perdus ne peut pas être négatif");
         }
         this.matchsPerdus = matchsPerdus;
+        logger.info("Matchs perdus mis à jour à : {}", matchsPerdus);
     }
 
     public int getButsMarques() {
@@ -58,13 +70,17 @@ public class ClubDeFoot {
 
     public void setButsMarques(int butsMarques) {
         if (butsMarques < 0) {
+            logger.error("Tentative de définir un nombre négatif de buts marqués");
             throw new IllegalArgumentException("Le nombre de buts marqués ne peut pas être négatif");
         }
         this.butsMarques = butsMarques;
+        logger.info("Buts marqués mis à jour à : {}", butsMarques);
     }
 
     public int getScore() {
-        return (matchsRemportes * 3) + matchsNuls;
+        int score = (matchsRemportes * 3) + matchsNuls;
+        logger.trace("Calcul du score pour {} : {}", nom, score);
+        return score;
     }
 
     @Override
